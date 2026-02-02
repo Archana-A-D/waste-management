@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #0a8754, #16c172);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Home button */
+.home-btn {
+    position: absolute;      /* THIS is the key */
+    top: 20px;
+    right: 25px;
+
+    background: #e9f8f1;
+    color: #0a8754;
+    text-decoration: none;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* Auth box */
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.auth-box {
+    background: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.auth-box h2 {
+    color: #0a8754;
+    margin-bottom: 8px;
+}
+
+.auth-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.auth-box input:focus {
+    outline: none;
+    border-color: #0a8754;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #0a8754;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-box button:hover {
+    background: #087046;
+}
+
+.switch {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.switch a {
+    color: #0a8754;
+    font-weight: 600;
+    text-decoration: none;
+}
+

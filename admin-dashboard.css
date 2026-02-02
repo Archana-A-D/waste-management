@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+}
+
+/* Header */
+.header {
+    background: #0a8754;
+    color: #fff;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout {
+    background: #e9f8f1;
+    color: #0a8754;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Container */
+.container {
+    padding: 30px 8%;
+}
+
+/* Overall performance */
+.overall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.overall-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.overall-card h3 {
+    font-size: 30px;
+    color: #0a8754;
+}
+
+/* Ward grid */
+.ward-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ward-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.ward-card:hover {
+    transform: translateY(-5px);
+}
+
+.ward-card h4 {
+    color: #0a8754;
+    margin-bottom: 10px;
+}
+
+.ward-stats p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+/* Back button */
+.back-btn {
+    margin-bottom: 15px;
+    background: #e9f8f1;
+    color: #0a8754;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #e9f8f1;
+}

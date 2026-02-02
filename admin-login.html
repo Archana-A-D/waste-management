@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login | SmartWaste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<!-- Home button -->
+<a href="index.html" class="home-btn">Home</a>
+
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Admin Login</h2>
+        <p>Login to manage waste collection system</p>
+
+        <form onsubmit="adminLogin(event)">
+            <input 
+                type="text" 
+                id="adminId" 
+                placeholder="Admin ID" 
+                required
+            >
+
+            <input 
+                type="password" 
+                id="adminPassword" 
+                placeholder="Password" 
+                required
+            >
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function adminLogin(event) {
+    event.preventDefault();
+
+    // Fixed admin credentials (demo)
+    const ADMIN_ID = "ADMIN001";
+    const ADMIN_PASSWORD = "admin123";
+
+    const adminId = document.getElementById("adminId").value;
+    const adminPassword = document.getElementById("adminPassword").value;
+
+    if (adminId === ADMIN_ID && adminPassword === ADMIN_PASSWORD) {
+        localStorage.setItem("adminLoggedIn", "true");
+        window.location.href = "admin-dashboard.html";
+    } else {
+        alert("Invalid Admin credentials");
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard | SmartWaste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user-dashboard.css">
+</head>
+<body>
+
+<!-- Login protection -->
+<script>
+if (!localStorage.getItem("loggedIn")) {
+    window.location.href = "login.html";
+}
+</script>
+
+<header class="header">
+    <h2>User Dashboard</h2>
+    <div class="header-actions">
+        <a href="index.html" class="header-btn">Home</a>
+        <button class="header-btn logout" onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Request Form -->
+    <div class="request-box">
+        <h3>Request Waste Pickup</h3>
+
+        <form onsubmit="submitRequest(event)">
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <textarea id="address" placeholder="Address" required></textarea>
+            <input type="text" id="ward" placeholder="Ward Number" required>
+
+            <label class="waste-label">Select Waste Type</label>
+            <div class="waste-types">
+                <label><input type="checkbox" value="Biodegradable"> Biodegradable</label>
+                <label><input type="checkbox" value="Plastic"> Plastic</label>
+                <label><input type="checkbox" value="E-Waste"> E-Waste</label>
+                <label><input type="checkbox" value="Mixed Waste"> Mixed Waste</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Bin Full</button>
+        </form>
+    </div>
+
+    <!-- Status -->
+    <div class="status-box">
+        <h3>Request Status</h3>
+
+        <div class="status-bar">
+            <div class="step" id="requested">Requested</div>
+            <div class="step" id="accepted">Accepted</div>
+            <div class="step" id="completed">Completed</div>
+        </div>
+
+        <p id="statusText">No pickup request submitted yet.</p>
+    </div>
+
+</div>
+
+<script src="user-dashboard.js"></script>
+</body>
+</html>

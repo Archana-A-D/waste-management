@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collector Dashboard | SmartWaste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="collector-dashboard.css">
+</head>
+<body>
+
+<!-- Login protection -->
+<script>
+if (!localStorage.getItem("collectorLoggedIn") || !localStorage.getItem("collectorWard")) {
+    window.location.href = "collector-login.html";
+}
+</script>
+
+<header class="header">
+    <h2>Collector Dashboard</h2>
+    <div>
+        <span id="wardLabel"></span>
+        <button class="logout" onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<div class="container">
+    <h3>Pickup Requests</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sl no</th>
+                <th>Address</th>
+                <th>Ward</th>
+                <th>Waste Type</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="requestTable">
+            <!-- rows injected by JS -->
+        </tbody>
+    </table>
+</div>
+
+<script src="collector-dashboard.js"></script>
+</body>
+</html>

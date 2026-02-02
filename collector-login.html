@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collector Login | SmartWaste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="collector-dashboard.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-box">
+        <a href="index.html" class="home-btn">Home</a>
+        <h2>Collector Login</h2>
+        <p>Login using assigned Collector ID</p>
+
+        <form onsubmit="collectorLogin(event)">
+            <input 
+                type="text" 
+                id="collectorId" 
+                placeholder="Collector ID (e.g., COL001)" 
+                required
+            >
+
+            <input 
+                type="password" 
+                id="password" 
+                placeholder="Password" 
+                required
+            >
+
+            <select id="ward" required>
+                <option value="">Select Ward</option>
+                <option value="Ward 1">Ward 1</option>
+                <option value="Ward 2">Ward 2</option>
+                <option value="Ward 3">Ward 3</option>
+                <option value="Ward 4">Ward 4</option>
+                <option value="Ward 5">Ward 5</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function collectorLogin(event) {
+    event.preventDefault();
+
+    const collectorId = document.getElementById("collectorId").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const ward = document.getElementById("ward").value;
+
+    // Predefined collectors (demo)
+    const collectors = {
+        "COL001": { password: "pass001", ward: "Ward 1" },
+        "COL002": { password: "pass002", ward: "Ward 2" },
+        "COL003": { password: "pass003", ward: "Ward 3" },
+        "COL004": { password: "pass004", ward: "Ward 4" },
+        "COL005": { password: "pass005", ward: "Ward 5" }
+    };
+
+    if (!collectors[collectorId]) {
+        alert("Invalid Collector ID");
+        return;
+    }
+
+    if (collectors[collectorId].password !== password) {
+        alert("Incorrect password");
+        return;
+    }
+
+    if (collectors[collectorId].ward !== ward) {
+        alert("Selected ward does not match assigned ward");
+        return;
+    }
+
+    // Store login details (frontend demo)
+    localStorage.setItem("collectorLoggedIn", "true");
+    localStorage.setItem("collectorId", collectorId);
+    localStorage.setItem("collectorWard", ward);
+
+    window.location.href = "collector-dashboard.html";
+}
+</script>
+
+</body>
+</html>

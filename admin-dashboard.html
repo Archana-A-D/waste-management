@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | SmartWaste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body>
+
+<!-- Admin protection -->
+<script>
+if (!localStorage.getItem("adminLoggedIn")) {
+    window.location.href = "admin-login.html";
+}
+</script>
+
+<header class="header">
+    <h2>Admin Dashboard</h2>
+    <button class="logout" onclick="logout()">Logout</button>
+</header>
+
+<div class="container">
+
+    <!-- OVERALL PERFORMANCE -->
+    <div class="overall">
+        <div class="overall-card">
+            <h3 id="overallTotal">0</h3>
+            <p>Total Requests</p>
+        </div>
+        <div class="overall-card">
+            <h3 id="overallCompleted">0</h3>
+            <p>Completed</p>
+        </div>
+        <div class="overall-card">
+            <h3 id="overallPending">0</h3>
+            <p>Pending</p>
+        </div>
+    </div>
+
+    <!-- WARD LIST -->
+    <div id="wardSection">
+        <h3>Select Ward</h3>
+
+        <div class="ward-grid" id="wardGrid">
+            <!-- Ward cards from JS -->
+        </div>
+    </div>
+
+    <!-- WARD DETAILS -->
+    <div id="wardDetails" style="display:none;">
+        <button class="back-btn" onclick="backToWards()">← Back</button>
+        <h3 id="wardTitle"></h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl no</th>
+                    <th>User Email</th>
+                    <th>Address</th>
+                    <th>Waste Type</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="wardTable"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="admin-dashboard.js"></script>
+</body>
+</html>
