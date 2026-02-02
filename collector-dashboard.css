@@ -130,3 +130,12 @@ button.action {
     font-weight: 600;
     cursor: pointer;
 }
+.login-container {
+    height: 100vh;
+    background: linear-gradient(135deg, #0a8754, #16c172);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
